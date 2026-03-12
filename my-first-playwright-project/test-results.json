@@ -96,52 +96,61 @@
   },
   "suites": [
     {
-      "title": "saucedemo-login.spec.ts",
-      "file": "saucedemo-login.spec.ts",
+      "title": "saucedemo/login.spec.ts",
+      "file": "saucedemo/login.spec.ts",
       "column": 0,
       "line": 0,
-      "specs": [
+      "specs": [],
+      "suites": [
         {
-          "title": "login with environment variables",
-          "ok": true,
-          "tags": [],
-          "tests": [
+          "title": "SauceDemo Login Tests",
+          "file": "saucedemo/login.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
             {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
+              "title": "Successful login with standard user",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 7,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 486,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-02-26T04:24:37.917Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": []
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1002,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-12T12:54:37.212Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
+              "id": "87a74ef46e8bd881bda8-7763082ccb68a1f7ad72",
+              "file": "saucedemo/login.spec.ts",
+              "line": 6,
+              "column": 9
             }
-          ],
-          "id": "d900de64a91b3c9fcd38-98dc71fa55bbdd4492c2",
-          "file": "saucedemo-login.spec.ts",
-          "line": 4,
-          "column": 5
+          ]
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-26T04:24:35.451Z",
-    "duration": 3038.907999999996,
+    "startTime": "2026-03-12T12:54:34.765Z",
+    "duration": 3723.2560000009835,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

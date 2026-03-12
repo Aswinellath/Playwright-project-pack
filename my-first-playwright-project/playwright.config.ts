@@ -83,6 +83,14 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    // {
+    //   name: 'saucedemo-chromium',
+    //   use: {
+    //     ...devices['Desktop Chrome'],
+    //     baseURL: 'https://www.saucedemo.com',
+    //   },
+    //   testMatch:
+    // }
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
