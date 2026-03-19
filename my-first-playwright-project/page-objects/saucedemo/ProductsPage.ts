@@ -14,7 +14,7 @@ this.pageTitle = page.locator('.title');
 this.inventoryItems = page.locator('.inventory_item');
 this.shoppingCartBadge = page.locator('.shopping_cart_badge');
 this.shoppingCartLink = page.locator('.shopping_cart_link');
-this.sortDropdown = page.locator('[data-test="product_sort_container"]');
+this.sortDropdown = page.locator('[data-test="product-sort-container"]');
 }
 
 async goto() {
@@ -29,8 +29,8 @@ async getProductNames(): Promise<string[]> {
 const items = await this.inventoryItems.all();
 const names: string[] = [];
 
-    for (const item of items) {
-const name = await item.locator('.inventory_item_name').textContent();
+for (const item of items) {
+    const name = await item.locator('.inventory_item_name').textContent();
       if (name) names.push(name);
 }
 
@@ -48,11 +48,16 @@ await product.locator('button:has-text("Remove")').click();
 }
 
 async getCartItemCount(): Promise<string> {
-    try {
+ if (await this.shoppingCartBadge.isVisible()) {
+ 
 return await this.shoppingCartBadge.textContent() || '0';
-    } catch {
+ 
+}  {
+
 return '0';
+ 
 }
+
 }
 
 async clickShoppingCart() {
@@ -73,4 +78,9 @@ const product = this.page.locator('.inventory_item', { hasText: productName });
 const removeButton = product.locator('button:has-text("Remove")');
 return await removeButton.isVisible();
 }
+
+async goToCart() {
+    await this.shoppingCartLink.click();
+  }
+
 }

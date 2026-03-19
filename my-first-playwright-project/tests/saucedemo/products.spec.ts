@@ -53,10 +53,10 @@ expect(cartCount).toBe('0');
 test('can sort products by name A-Z', async ({ page }) => {
 const productsPage = new ProductsPage(page);
 
-await productsPage.sortBy('az');
+await productsPage.sortBy('za');
 
 const productNames = await productsPage.getProductNames();
-expect(productNames[1]).toBe('Sauce Labs Backpack');
+expect(productNames[0]).toBe('Test.allTheThings() T-Shirt (Red)');
 });
 
 test('can sort products by price low to high', async ({ page }) => {
