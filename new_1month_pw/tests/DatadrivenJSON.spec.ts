@@ -4,7 +4,7 @@ import { LoginPage } from '../pages/LoginPage';
 
 import { ProductsPage } from '../pages/ProductsPage';
 
-import productsData from '/home/user2/Documents/new_1month_pw/test data/saucedemo-products.json';
+import productsData from '../test data/saucedemo-products.json';
 
 test.describe('SauceDemo Products from JSON', ()=>{
     test.beforeEach(async({page})=>{

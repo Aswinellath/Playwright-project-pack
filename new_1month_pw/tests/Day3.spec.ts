@@ -58,7 +58,7 @@ test('form testing', async({page})=>{
     
     
 
-    await page.locator('#uploadPicture').setInputFiles('//home/user2/Documents/new_1month_pw/test data/Snapshot_2026-09-08_16-12-50.png');
+    await page.locator('#uploadPicture').setInputFiles(path.join(__dirname, '../test data/Snapshot_2026-09-08_16-12-50.png'));
     
 
     await page.getByRole('button',{name:'Submit'}).click();

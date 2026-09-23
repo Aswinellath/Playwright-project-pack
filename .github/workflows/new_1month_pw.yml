@@ -1,0 +1,39 @@
+name: new_1month_pw Playwright Tests
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'new_1month_pw/**'
+      - '.github/workflows/new_1month_pw.yml'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'new_1month_pw/**'
+      - '.github/workflows/new_1month_pw.yml'
+  workflow_dispatch:
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: new_1month_pw
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+        cache: npm
+        cache-dependency-path: new_1month_pw/package-lock.json
+    - name: Install dependencies
+      run: npm ci
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: Run Playwright tests
+      run: npx playwright test
+    - uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+        name: new_1month_pw-playwright-report
+        path: new_1month_pw/playwright-report/
+        retention-days: 30

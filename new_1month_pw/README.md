@@ -46,8 +46,7 @@ A Playwright + TypeScript test automation project that covers UI testing with th
 │   ├── fakerDataDriven.spec.ts
 │   └── ...
 ├── test script/            # JavaScript/TypeScript practice scripts
-├── playwright.config.ts
-└── .github/workflows/playwright.yml
+└── playwright.config.ts
 ```
 
 ## What is covered
@@ -117,6 +116,6 @@ See `playwright.config.ts`:
 
 ## Continuous integration
 
-`.github/workflows/playwright.yml` installs dependencies and browsers, runs the full suite on pushes and pull requests to `main`/`master`, and uploads the HTML report as a build artifact (kept for 30 days).
+The workflow lives at the root of the repository in `.github/workflows/new_1month_pw.yml` (GitHub only runs workflows from there). It runs whenever files in `new_1month_pw/` change on `main`/`master`, on pull requests, or manually from the Actions tab. It installs dependencies and browsers, runs the full suite inside `new_1month_pw/`, and uploads the HTML report as a build artifact (kept for 30 days).
 
 > Note: the credentials in these tests are the public demo accounts published by SauceDemo and FakeStoreAPI.

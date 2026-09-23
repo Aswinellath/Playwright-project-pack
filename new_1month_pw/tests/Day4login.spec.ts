@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 
-import { LoginPage } from '/home/user2/Documents/new_1month_pw/pages/LoginPage'
+import { LoginPage } from '../pages/LoginPage'
 
 
 test.describe('Saucedemo login tests', ()=>{
